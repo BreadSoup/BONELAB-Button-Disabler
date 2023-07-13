@@ -1,37 +1,56 @@
 ﻿using MelonLoader;
+using UnityEngine;
+using System.IO;
+using BoneLib.BoneMenu;
+using System;
+using BoneLib.BoneMenu.Elements;
+
+using System.Runtime.CompilerServices;
+using BoneLib;
+using SLZ.VRMK;
+using System.Security.Policy;
+using System.Collections.Generic;
 
 namespace bonelab_template
 {
     internal partial class Main : MelonMod
     {
-        public override void OnEarlyInitializeMelon()
-        {
-            base.OnEarlyInitializeMelon();
-        }
 
         public override void OnInitializeMelon()
         {
-            base.OnInitializeMelon();
+            Hooking.OnLevelInitialized += (_) => { OnSceneAwake(); };
         }
 
-        public override void OnLateInitializeMelon()
+        private static void OnSceneAwake()
         {
-            base.OnLateInitializeMelon();
-        }
-
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-        }
-
-        public override void OnFixedUpdate()
-        {
-            base.OnFixedUpdate();
-        }
-
-        public override void OnLateUpdate()
-        {
-            base.OnLateUpdate();
+            var objectsWithKeyword = Transform.FindObjectsOfType<Transform>(true);
+            var ryrjytrty = GameObject.FindObjectsOfType<GameObject>(true);
+            foreach (Transform obj in objectsWithKeyword)
+            {
+                if (obj.name.Contains("FLOORS") || obj.name.Contains("LoadButtons"))
+                {
+                    /* can be uncommented if you want to enable the button to go to the next level at the end of levels
+                    if (obj.name.Contains("NEXTLEVEL"))
+                    {
+                        continue;
+                    }
+                    */ 
+                   
+                    for (int i = 0; i < obj.childCount; i++)
+                    {
+                        if (i == 10 || i == 11)
+                        {
+                            continue;
+                        }
+                        Transform child = obj.GetChild(i);
+                        SLZ.Interaction.ButtonToggle ButtonToggle = child.GetComponent<SLZ.Interaction.ButtonToggle>();
+                        if (ButtonToggle != null)
+                        {
+                            ButtonToggle.enabled = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }
