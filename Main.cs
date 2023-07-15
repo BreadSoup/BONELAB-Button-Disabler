@@ -29,12 +29,10 @@ namespace bonelab_template
             {
                 if (obj.name.Contains("FLOORS") || obj.name.Contains("LoadButtons"))
                 {
-                    /* can be uncommented if you want to enable the button to go to the next level at the end of levels
                     if (obj.name.Contains("NEXTLEVEL"))
                     {
                         continue;
                     }
-                    */ 
                    
                     for (int i = 0; i < obj.childCount; i++)
                     {
