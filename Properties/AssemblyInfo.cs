@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
-using bonelab_template;
+using ButtonDisabler;
 using MelonLoader;
 
-[assembly: AssemblyTitle(bonelab_template.Main.Description)]
-[assembly: AssemblyDescription(bonelab_template.Main.Description)]
-[assembly: AssemblyCompany(bonelab_template.Main.Company)]
-[assembly: AssemblyProduct(bonelab_template.Main.Name)]
-[assembly: AssemblyCopyright("Developed by " + bonelab_template.Main.Author)]
-[assembly: AssemblyTrademark(bonelab_template.Main.Company)]
-[assembly: AssemblyVersion(bonelab_template.Main.Version)]
-[assembly: AssemblyFileVersion(bonelab_template.Main.Version)]
-[assembly: MelonInfo(typeof(bonelab_template.Main), bonelab_template.Main.Name, bonelab_template.Main.Version, bonelab_template.Main.Author, bonelab_template.Main.DownloadLink)]
+[assembly: AssemblyTitle(ButtonDisabler.Main.Description)]
+[assembly: AssemblyDescription(ButtonDisabler.Main.Description)]
+[assembly: AssemblyCompany(ButtonDisabler.Main.Company)]
+[assembly: AssemblyProduct(ButtonDisabler.Main.Name)]
+[assembly: AssemblyCopyright("Developed by " + ButtonDisabler.Main.Author)]
+[assembly: AssemblyTrademark(ButtonDisabler.Main.Company)]
+[assembly: AssemblyVersion(ButtonDisabler.Main.Version)]
+[assembly: AssemblyFileVersion(ButtonDisabler.Main.Version)]
+[assembly: MelonInfo(typeof(ButtonDisabler.Main), ButtonDisabler.Main.Name, ButtonDisabler.Main.Version, ButtonDisabler.Main.Author, ButtonDisabler.Main.DownloadLink)]
 [assembly: MelonColor(System.ConsoleColor.White)]
 
 // Create and Setup a MelonGame Attribute to mark a Melon as Universal or Compatible with specific Games.
